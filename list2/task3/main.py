@@ -82,13 +82,9 @@ def simulated_annealing(max_time):
 
 
 if __name__ == '__main__':
-    with fileinput.input() as file:
-        first_line = file.readline()
-        [max_time, rows, columns] = [int(x) for x in first_line.split()]
-        board = np.ndarray((rows, columns))
-        for i, line in enumerate(file, 0):
-            for j, x in enumerate(str.rstrip(line)):
-                board[i][j] = int(x)
+    max_time, rows, columns = input().split()
+    max_time, rows, columns = int(max_time), int(rows), int(columns)
+    board = np.array([[int(char) for char in input()] for i in range(0, rows)])
     solution = simulated_annealing(max_time)
     print(''.join(solution), file=sys.stderr)
     print(solution.steps)

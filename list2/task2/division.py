@@ -97,7 +97,6 @@ class Division:
                 for i in range(block.height_position, block.height_position + block.height):
                     for j in range(block.width_position, block.width_position + block.width):
                         array_representation[i][j] = block.value
-        self.array_representation = array_representation # todo wypieprzyć
         str_representation = ""
         for i, row in enumerate(array_representation):
             for j, value in enumerate(row):
